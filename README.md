@@ -287,3 +287,14 @@ function ClickIncrease(props) {
 export default withCounter(ClickIncrease, 3);
 
 ```
+
+# .General case
+```
+<withAuth>
+  <withLayout>
+    <withLogging>
+      <Component />
+    </withLogging>
+  </withLayout>
+</withAuth>
+```
