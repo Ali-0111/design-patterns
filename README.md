@@ -298,3 +298,53 @@ export default withCounter(ClickIncrease, 3);
   </withLayout>
 </withAuth>
 ```
+
+# conainter/presentaional
+```
+The presentational/container pattern is a common design pattern in React (and other component-based frameworks) that separates concerns by splitting components into two categories:
+
+Presentational Components: These components are primarily concerned with how things look. They receive data and callbacks exclusively via props and have little to no internal state.
+Container Components: These components are concerned with how things work. They fetch data, manage state, and handle business logic. They pass data and callbacks down to presentational components.
+This pattern helps in creating a clear separation of concerns, improving maintainability and testability. Here are 10 common use cases where the presentational/container pattern is used:
+
+Form Handling:
+Presentational Component: Renders the form fields and buttons, and receives form data and submit/cancel callbacks via props.
+Container Component: Manages form state, validation, and submission logic.
+#
+
+Data Fetching:
+Presentational Component: Displays data in a list or table format.
+Container Component: Fetches data from an API and passes it down to the presentational component.
+#
+Authentication:
+Presentational Component: Shows login form and error messages.
+Container Component: Manages authentication state, handles login/logout actions, and communicates with authentication services.
+#
+Routing:
+Presentational Component: Displays the UI based on the current route.
+Container Component: Manages the routing logic, listens for route changes, and provides the necessary data to the presentational component.
+#
+State Management with Redux:
+Presentational Component: Renders UI based on props.
+Container Component: Connects to Redux store, maps state and dispatch to props, and passes them to the presentational component.
+#
+Complex UI Components:
+Presentational Component: Renders the complex UI (e.g., modals, dropdowns) based on props.
+Container Component: Manages the state and logic for showing/hiding the UI component and handles interactions.
+#
+Pagination:
+Presentational Component: Displays pagination controls and the current page's data.
+Container Component: Manages pagination state, fetches data for the current page, and handles page changes.
+#
+Search and Filter:
+Presentational Component: Renders search input, filter options, and results.
+Container Component: Manages search and filter state, performs search queries, and filters data.
+#
+Dashboard:
+Presentational Component: Displays various widgets and dashboard elements based on props.
+Container Component: Fetches data for the dashboard, manages state for each widget, and handles user interactions.
+#
+Error Handling:
+Presentational Component: Displays error messages or fallback UI.
+Container Component: Catches errors, manages error state, and decides when to show the error message.
+``
