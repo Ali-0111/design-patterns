@@ -347,4 +347,35 @@ Container Component: Fetches data for the dashboard, manages state for each widg
 Error Handling:
 Presentational Component: Displays error messages or fallback UI.
 Container Component: Catches errors, manages error state, and decides when to show the error message.
-``
+```
+
+#. Hooks
+
+In many cases, the Container/Presentational pattern can be replaced with React Hooks. The introduction of Hooks made it easy for developers to add statefulness without needing a container component to provide that state.
+
+useHook.js
+```
+export default function useDogImages() {
+  const [dogs, setDogs] = useState([]);
+
+  useEffect(() => {
+    fetch("https://dog.ceo/api/breed/labrador/images/random/6")
+      .then((res) => res.json())
+      .then(({ message }) => setDogs(message));
+  }, []);
+
+  return dogs;
+}
+```
+
+presentational.js
+```
+import React from "react";
+import useDogImages from "./useDogImages";
+
+export default function DogImages() {
+  const dogs = useDogImages();
+
+  return dogs.map((dog, i) => <img src={dog} key={i} alt="Dog" />);
+}
+```
